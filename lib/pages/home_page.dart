@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/custom_size.dart';
-import 'package:my_portfolio/constants/skill_items.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';

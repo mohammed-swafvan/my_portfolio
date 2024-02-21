@@ -70,12 +70,12 @@ class SkillsDesktop extends StatelessWidget {
                     spacing: 12,
                     runSpacing: 12,
                     children: [
-                      for(int i = 0; i < SkillItems.skillItems.length; i++)
-                      Chip(
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-                        avatar: Image.asset(SkillItems.skillItems[i]["img"]),
-                        label: Text(SkillItems.skillItems[i]["title"]),
-                      ),
+                      for (int i = 0; i < SkillItems.skillItems.length; i++)
+                        Chip(
+                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                          avatar: Image.asset(SkillItems.skillItems[i]["img"]),
+                          label: Text(SkillItems.skillItems[i]["title"]),
+                        ),
                     ],
                   ),
                 ),

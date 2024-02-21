@@ -6,6 +6,7 @@ import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
+import 'package:my_portfolio/widgets/project_section.dart';
 import 'package:my_portfolio/widgets/skills_desktop.dart';
 import 'package:my_portfolio/widgets/skills_mobile.dart';
 
@@ -41,14 +42,11 @@ class HomePage extends StatelessWidget {
             if (constraints.maxWidth >= CustomSize.minDesktopWidth) const SkillsDesktop() else const SkillsMobile(),
 
             /// Projects Section
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-            ),
+            const ProjectSection(),
 
             /// Contact Section
             Container(
+              color: Colors.amber,
               height: 500,
               width: double.maxFinite,
             ),

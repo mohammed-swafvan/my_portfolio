@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
-import 'package:my_portfolio/constants/hight_width.dart';
+import 'package:my_portfolio/constants/height_width.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -31,7 +31,7 @@ class MainMobile extends StatelessWidget {
               ),
             ),
           ),
-          Hightwidth.hight20,
+          Heightwidth.hight20,
           const Text(
             "Hi,",
             style: TextStyle(
@@ -56,7 +56,7 @@ class MainMobile extends StatelessWidget {
               color: CustomColors.whitePrimary,
             ),
           ),
-          Hightwidth.hight10,
+          Heightwidth.hight10,
           SizedBox(
             width: 140,
             child: ElevatedButton(

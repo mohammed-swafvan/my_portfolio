@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
-import 'package:my_portfolio/constants/hight_width.dart';
+import 'package:my_portfolio/constants/height_width.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -10,7 +10,6 @@ class MainDesktop extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 20),
       height: screenHeight / 1.2,
       constraints: const BoxConstraints(minHeight: 350),
       child: Row(
@@ -44,7 +43,7 @@ class MainDesktop extends StatelessWidget {
                   color: CustomColors.whitePrimary,
                 ),
               ),
-              Hightwidth.hight15,
+              Heightwidth.hight15,
               SizedBox(
                 width: 180,
                 child: ElevatedButton(

@@ -11,8 +11,8 @@ class HeaderItems{
 
   static const List<IconData> headerIconList = [
     Icons.home_rounded,
-    Icons.android_outlined,
-    Icons.back_hand_rounded,
+    Icons.handyman_rounded,
+    Icons.apps_rounded,
     Icons.web_rounded,
     Icons.quick_contacts_mail_rounded,
   ];

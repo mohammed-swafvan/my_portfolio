@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/custom_size.dart';
+import 'package:my_portfolio/constants/skill_items.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
 import 'package:my_portfolio/widgets/main_mobile.dart';
+import 'package:my_portfolio/widgets/skills_desktop.dart';
+import 'package:my_portfolio/widgets/skills_mobile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -36,11 +39,7 @@ class HomePage extends StatelessWidget {
             if (constraints.maxWidth >= CustomSize.minDesktopWidth) const MainDesktop() else const MainMobile(),
 
             /// Skills Section
-            Container(
-              color: Colors.amber,
-              height: 500,
-              width: double.maxFinite,
-            ),
+            if (constraints.maxWidth >= CustomSize.minDesktopWidth) const SkillsDesktop() else const SkillsMobile(),
 
             /// Projects Section
             Container(

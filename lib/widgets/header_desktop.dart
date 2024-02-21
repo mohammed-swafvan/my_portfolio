@@ -20,7 +20,7 @@ class HeaderDesktop extends StatelessWidget {
           const Spacer(),
           for (var i = 0; i < HeaderItems.headerTitleList.length; i++)
             Padding(
-              padding: const EdgeInsets.only(right: 12),
+              padding: const EdgeInsets.only(right: 14),
               child: TextButton(
                 onPressed: () {},
                 child: Text(

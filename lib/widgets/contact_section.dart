@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/custom_size.dart';
 import 'package:my_portfolio/constants/height_width.dart';
 import 'package:my_portfolio/constants/sms_links.dart';
 import 'package:my_portfolio/widgets/custom_text_field_widget.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
 class ContactSection extends StatelessWidget {
@@ -58,7 +59,7 @@ class ContactSection extends StatelessWidget {
             child: CustomTextFieldWidget(
               controller: messageController,
               hintText: "Your Message...",
-              maxLines: 20,
+              maxLines: 16,
             ),
           ),
 

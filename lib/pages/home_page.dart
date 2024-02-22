@@ -4,6 +4,7 @@ import 'package:my_portfolio/constants/custom_size.dart';
 import 'package:my_portfolio/constants/height_width.dart';
 import 'package:my_portfolio/widgets/contact_section.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
+import 'package:my_portfolio/widgets/footer.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
 import 'package:my_portfolio/widgets/main_desktop.dart';
@@ -54,11 +55,7 @@ class HomePage extends StatelessWidget {
             const ContactSection(),
 
             /// Footer Section
-            Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
-            ),
+            const Footer(),
           ],
         ),
       );

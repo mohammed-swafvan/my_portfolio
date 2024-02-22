@@ -4,7 +4,8 @@ import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/height_width.dart';
 
 class MainMobile extends StatelessWidget {
-  const MainMobile({super.key});
+  const MainMobile({super.key, required this.onGetInTouch});
+  final Function() onGetInTouch;
 
   @override
   Widget build(BuildContext context) {
@@ -69,7 +70,7 @@ class MainMobile extends StatelessWidget {
                 SizedBox(
                   width: 140,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: onGetInTouch,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: CustomColors.yellowPrimay,
                     ),

@@ -3,7 +3,9 @@ import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/header_items.dart';
 
 class DrawerMobile extends StatelessWidget {
-  const DrawerMobile({super.key});
+  const DrawerMobile({super.key, required this.onNavitemTap});
+
+  final Function(int) onNavitemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,9 @@ class DrawerMobile extends StatelessWidget {
           ),
           for (int i = 0; i < HeaderItems.headerIconList.length; i++)
             ListTile(
-              onTap: () {},
+              onTap: () {
+                onNavitemTap(i);
+              },
               contentPadding: const EdgeInsets.symmetric(horizontal: 16),
               leading: Icon(HeaderItems.headerIconList[i]),
               title: Text(HeaderItems.headerTitleList[i]),

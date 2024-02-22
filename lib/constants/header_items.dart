@@ -5,7 +5,6 @@ class HeaderItems{
     "Home",
     "Skills",
     "Projects",
-    "Blog",
     "Contacts",
   ];
 
@@ -13,7 +12,6 @@ class HeaderItems{
     Icons.home_rounded,
     Icons.handyman_rounded,
     Icons.apps_rounded,
-    Icons.web_rounded,
     Icons.quick_contacts_mail_rounded,
   ];
 }

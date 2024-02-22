@@ -17,6 +17,7 @@ class ContactSection extends StatelessWidget {
     TextEditingController messageController = TextEditingController();
     return Container(
       padding: const EdgeInsets.all(32).copyWith(bottom: 80),
+      width: double.infinity,
       color: CustomColors.bgLight1,
       child: Column(
         children: [

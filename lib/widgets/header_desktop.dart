@@ -6,7 +6,9 @@ import 'package:my_portfolio/styles/style.dart';
 import 'package:my_portfolio/widgets/website_logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+  const HeaderDesktop({super.key, required this.onNavitemTap});
+
+  final Function(int) onNavitemTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,9 @@ class HeaderDesktop extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 14),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    onNavitemTap(i);
+                  },
                   child: Text(
                     HeaderItems.headerTitleList[i],
                     style: const TextStyle(

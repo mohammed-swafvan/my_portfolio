@@ -4,7 +4,8 @@ import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/height_width.dart';
 
 class MainDesktop extends StatelessWidget {
-  const MainDesktop({super.key});
+  const MainDesktop({super.key, required this.onGetInTouch});
+  final Function() onGetInTouch;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class MainDesktop extends StatelessWidget {
                 SizedBox(
                   width: 180,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: onGetInTouch,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: CustomColors.yellowPrimay,
                     ),

@@ -17,7 +17,7 @@ class ProjectSection extends StatelessWidget {
         children: [
           //Title
           const Text(
-            "Work Projects",
+            "Main Projects",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,

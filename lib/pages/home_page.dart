@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/custom_size.dart';
+import 'package:my_portfolio/constants/height_width.dart';
+import 'package:my_portfolio/widgets/contact_section.dart';
 import 'package:my_portfolio/widgets/drawer_mobile.dart';
 import 'package:my_portfolio/widgets/header_desktop.dart';
 import 'package:my_portfolio/widgets/header_mobile.dart';
@@ -41,15 +43,15 @@ class HomePage extends StatelessWidget {
             /// Skills Section
             if (constraints.maxWidth >= CustomSize.minDesktopWidth) const SkillsDesktop() else const SkillsMobile(),
 
+            Heightwidth.hight20,
+
             /// Projects Section
             const ProjectSection(),
 
+            Heightwidth.hight20,
+
             /// Contact Section
-            Container(
-              color: Colors.amber,
-              height: 500,
-              width: double.maxFinite,
-            ),
+            const ContactSection(),
 
             /// Footer Section
             Container(

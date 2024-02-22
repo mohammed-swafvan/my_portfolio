@@ -9,5 +9,6 @@ class Heightwidth {
   static const hight40 = SizedBox(height: 40);
 
   //Width
+  static const width15 = SizedBox(width: 15);
   static const width50 = SizedBox(width: 50);
 }

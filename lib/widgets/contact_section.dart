@@ -1,20 +1,30 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/constants/custom_colors.dart';
 import 'package:my_portfolio/constants/custom_size.dart';
 import 'package:my_portfolio/constants/height_width.dart';
 import 'package:my_portfolio/constants/sms_links.dart';
 import 'package:my_portfolio/widgets/custom_text_field_widget.dart';
+import 'package:http/http.dart' as http;
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
-class ContactSection extends StatelessWidget {
+class ContactSection extends StatefulWidget {
   const ContactSection({super.key});
 
   @override
+  State<ContactSection> createState() => _ContactSectionState();
+}
+
+class _ContactSectionState extends State<ContactSection> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController messageController = TextEditingController();
+  bool isLodaing = false;
+  Text? statusText;
+  @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController messageController = TextEditingController();
     return Container(
       padding: const EdgeInsets.all(32).copyWith(bottom: 80),
       width: double.infinity,
@@ -70,25 +80,35 @@ class ContactSection extends StatelessWidget {
             constraints: const BoxConstraints(
               maxWidth: 700,
             ),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: SizedBox(
-                height: 40,
-                width: 200,
-                child: ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: CustomColors.yellowPrimay,
-                  ),
-                  child: const Text(
-                    "Get in touch",
-                    style: TextStyle(
-                      color: CustomColors.whitePrimary,
-                      fontWeight: FontWeight.bold,
+            child: Row(
+              children: [
+                SizedBox(
+                  height: 40,
+                  width: 200,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      statusText = await sendEmail(
+                        name: nameController.text,
+                        email: emailController.text,
+                        message: messageController.text,
+                      );
+                      setState(() {});
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: CustomColors.yellowPrimay,
+                    ),
+                    child: const Text(
+                      "Get in touch",
+                      style: TextStyle(
+                        color: CustomColors.whitePrimary,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              ),
+                Heightwidth.width15,
+                if (statusText != null) statusText! else if (isLodaing) const CircularProgressIndicator(),
+              ],
             ),
           ),
 
@@ -187,6 +207,69 @@ class ContactSection extends StatelessWidget {
           hintText: "Your Email",
         ),
       ],
+    );
+  }
+
+  Future<Text> sendEmail({required String name, required String email, required String message}) async {
+    if (name.isEmpty || email.isEmpty || message.isEmpty) {
+      return const Text(
+        "Fields are required!",
+        style: TextStyle(
+          color: Colors.red,
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
+      );
+    }
+
+    setState(() {
+      isLodaing = true;
+    });
+
+    final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
+    const serviceId = 'service_v3u5uyn';
+    const templateId = 'template_sm63zhd';
+    const userId = 'naRFjgTLJMUrigc3g';
+    final response = await http.post(url,
+        headers: {'Content-Type': 'application/json'},
+        body: json.encode({
+          'service_id': serviceId,
+          'template_id': templateId,
+          'user_id': userId,
+          'template_params': {
+            'name': name,
+            'subject': '',
+            'message': message,
+            'user_email': email,
+          }
+        }));
+
+    setState(() {
+      isLodaing = false;
+    });
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      nameController.clear();
+      emailController.clear();
+      messageController.clear();
+
+      return const Text(
+        "Submitted Successfully.",
+        style: TextStyle(
+          color: Colors.green,
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
+        ),
+      );
+    }
+
+    return const Text(
+      "Try after some time.",
+      style: TextStyle(
+        color: Colors.red,
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+      ),
     );
   }
 }

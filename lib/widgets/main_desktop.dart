@@ -47,6 +47,22 @@ class MainDesktop extends StatelessWidget {
                     color: CustomColors.whitePrimary,
                   ),
                 ),
+                Heightwidth.hight5,
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: [
+                    Image.asset("assets/images/location_icon.png", width: 16),
+                    const Text(
+                      "Malappuram, Kerala, India",
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w600,
+                        color: CustomColors.whitePrimary,
+                      ),
+                    ),
+                  ],
+                ),
                 Heightwidth.hight15,
                 SizedBox(
                   width: 180,

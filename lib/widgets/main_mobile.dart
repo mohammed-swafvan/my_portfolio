@@ -66,7 +66,23 @@ class MainMobile extends StatelessWidget {
                     color: CustomColors.whitePrimary,
                   ),
                 ),
-                Heightwidth.hight10,
+                Heightwidth.hight5,
+                Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  children: [
+                    Image.asset("assets/images/location_icon.png", width: 14),
+                    const Text(
+                      "Malappuram, Kerala, India",
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: CustomColors.whitePrimary,
+                      ),
+                    ),
+                  ],
+                ),
+                Heightwidth.hight15,
                 SizedBox(
                   width: 140,
                   child: ElevatedButton(

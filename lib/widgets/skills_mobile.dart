@@ -43,7 +43,12 @@ class SkillsMobile extends StatelessWidget {
                         width: 26,
                         height: 26,
                       ),
-                      title: Text(SkillItems.platFormItems[i]["title"]),
+                      title: Text(
+                        SkillItems.platFormItems[i]["title"],
+                        style: const TextStyle(
+                          color: CustomColors.whitePrimary,
+                        ),
+                      ),
                     ),
                   ),
                 Heightwidth.hight40,
